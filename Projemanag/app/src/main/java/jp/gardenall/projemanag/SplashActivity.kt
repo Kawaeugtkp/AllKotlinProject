@@ -1,9 +1,11 @@
 package jp.gardenall.projemanag
 
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
 import jp.gardenall.projemanag.databinding.ActivitySplashBinding
@@ -29,5 +31,10 @@ class SplashActivity : AppCompatActivity() {
 
         val typeFace: Typeface = Typeface.createFromAsset(assets, "carbon bl.otf")
         binding?.tvAppName?.typeface = typeFace
+
+        Handler().postDelayed({
+            startActivity(Intent(this, IntroActivity::class.java))
+            finish()
+        }, 2500)
     }
 }
